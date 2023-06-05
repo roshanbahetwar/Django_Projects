@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="BlanchedAlmond">
+<link rel="stylesheet" href="{%static 'css/demo.css' %}">
+<h1><center>Welcome to BookMyShow</h1>
+<<center><img src="{%static 'images/home.jpg' %}">
+<h1>Product List</h1>
+{% if prd_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Movie</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th>Email</th>
+    <th>Mobile</th>
+  </tr>
+     {% for prd in prd_list %}
+     <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.name}}</td>
+    <td>{{prd.movie}}</td>
+    <td>{{prd.price}}</td>
+    <td>{{prd.date}}</td>
+    <td>{{prd.email}}</td>
+    <td>{{prd.mobile}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+
+</body>
+</html>
