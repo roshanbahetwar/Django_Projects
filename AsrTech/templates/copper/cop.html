@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="BlanchedAlmond">
+<h1><center>Welcome to AsrTech</h1>
+<h3><center>Product List</h3>
+{% if prd_list %}
+<table style="width:60%" border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Date</th>
+  </tr>
+     {% for prd in prd_list %}
+     <tr>
+    <td style="text-align: center; vertical-align: middle;">{{prd.id}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{prd.product}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{prd.price}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{prd.qty}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{prd.date}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+</body>
+</html>
