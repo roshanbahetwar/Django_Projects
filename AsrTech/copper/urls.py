@@ -21,4 +21,5 @@ from copper import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("show/", views.copshow),
+    path("feedback/", views.feedback),
 ]
