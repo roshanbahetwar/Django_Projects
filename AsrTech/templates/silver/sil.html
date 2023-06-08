@@ -6,8 +6,8 @@
 </head>
 <body bgcolor="BlanchedAlmond">
 <h1><center>Welcome to AsrTech</h1>
-<h3><center>Copper Product List</h3>
-{% if prd_list %}
+<h3><center>Silver Product List</h3>
+{% if sil_list %}
 <table style="width:60%" border="1" margin="auto" align="center">
   <tr>
     <th>ID</th>
@@ -16,7 +16,7 @@
     <th>Quantity</th>
     <th>Date</th>
   </tr>
-     {% for prd in prd_list %}
+     {% for prd in sil_list %}
      <tr>
     <td style="text-align: center; vertical-align: middle;">{{prd.id}}</td>
     <td style="text-align: center; vertical-align: middle;">{{prd.product}}</td>
