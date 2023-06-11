@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="{%static 'css/epop.css' %}">
+<h1><center>Welcome to GoiPop Plateform</h1>
+<<center><img src="{%static 'images/population.jpg' %}">
+<h3><center>Government Employee Details </h3>
+{% if erd_list %}
+<table style="width:60%" border="1" margin="auto" align="center">
+  <tr>
+
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>PAN</th>
+    <th>Email</th>
+    <th>Mobile No.</th>
+  </tr>
+     {% for erd in erd_list %}
+     <tr>
+    <td style="text-align: center; vertical-align: middle;">{{erd.id}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{erd.name}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{erd.address}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{erd.pan}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{erd.email}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{erd.mobile}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+</body>
+</html>
