@@ -1,0 +1,3 @@
+this is vim line command
+hello Roshan
+where r y from
