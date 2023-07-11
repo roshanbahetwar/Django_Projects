@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="{%static 'css/actor.css' %}">
+<h1><center>Welcome To BollyWood</h1>
+<<center><img src="{%static 'images/bollywood.jpg' %}">
+<h3><center>BollyWood Actress Details </h3>
+{% if actress_list %}
+<table style="width:60%" border="1" margin="auto" align="center">
+  <tr>
+
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Salary</th>
+    <th>City</th>
+  </tr>
+     {% for actress in actress_list %}
+     <tr>
+    <td style="text-align: center; vertical-align: middle;">{{actress.id}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{actress.a_name}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{actress.a_age}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{actress.a_salary}}</td>
+    <td style="text-align: center; vertical-align: middle;">{{actress.a_city}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+</body>
+</html>
