@@ -10,7 +10,7 @@ def actor_form(r):
         if form.is_valid():
             form.save()
             return HttpResponse('<h1>Thanks for visiting...</h1>')
-    return render(r,'actor/details.html',{'form':form})
+    return render(r,'actor/dev_form.html',{'form':form})
 
 def show(r):
     actor = ActorDetailsModel.objects.all()

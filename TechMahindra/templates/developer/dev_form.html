@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>developer form</title>
+</head>
+<body bgcolor="Pink">
+<div class="container" align="center">
+    <h1>Register For Developer</h1>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="submit">
+
+    </form>
+</div>
+</body>
+</html>
