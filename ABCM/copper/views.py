@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .form import CopperDetailsForms
 from .models import CopperDetailsModels
 from django.http import HttpResponse
@@ -10,7 +10,7 @@ def copper_form(r):
         form = CopperDetailsForms(r.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('<h1>Thanks for Registration...</h1>')
+            return redirect('/copper/copper_show/')
     return render(r,'copper/copper_form.html',{'form':form})
 
 def copper_show(r):

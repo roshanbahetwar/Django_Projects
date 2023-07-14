@@ -1,0 +1,8 @@
+<h1>Persons</h1>
+<ul>
+  {% for i in per %}
+    <li>{{ i.name }}, {{ i.age }}, {{i.mobile}}</li>
+  {% empty %}
+    <li>No persons available.</li>
+  {% endfor %}
+</ul>
