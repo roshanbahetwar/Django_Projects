@@ -17,3 +17,10 @@ def copper_show(r):
     cop_show = CopperDetailsModels.objects.all()
     md = {'cop_list':cop_show}
     return render(r,'copper/cop_show.html',context=md)
+
+def indexPage(r):
+    data = {
+        'title':'Welcome To ABCM | Mumbai'
+    }
+
+    return render(r,'index.html',data)
