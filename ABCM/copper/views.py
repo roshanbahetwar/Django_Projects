@@ -18,9 +18,11 @@ def copper_show(r):
     md = {'cop_list':cop_show}
     return render(r,'copper/cop_show.html',context=md)
 
+import datetime
 def indexPage(r):
+    dt = datetime.datetime.now()
     data = {
-        'title':'Welcome To ABCM | Mumbai'
+        'title':'Welcome To ABCM | Mumbai,  Date:-','Date':str(dt)
     }
 
-    return render(r,'index.html',data)
+    return render(r,'index.html',context=data)
