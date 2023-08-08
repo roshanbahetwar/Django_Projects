@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>team</title>
+</head>
+<body>
+<h1><center>Welcome to DevTeams</h1>
+<table style="width:60%" border="1" margin="auto" align="center">
+  {% if teams_list %}
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Salary</th>
+    <th>City</th>
+  </tr>
+  {% for team in teams_list %}
+  <tr>
+    <td><center>{{team.id}}</center></td>
+    <td><center>{{team.name}}</center></td>
+    <td><center>{{team.age}}</center></td>
+    <td><center>{{team.salary}}</center></td>
+    <td><center>{{team.city}}</center></td>
+  </tr>
+
+{% endfor %}
+</table>
+{%else%}
+<h1>No data found</h1>
+{% endif %}
+</body>
+</html>
