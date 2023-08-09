@@ -25,4 +25,4 @@ def indexPage(r):
         'title':'Welcome To ABCM | Mumbai,  Date:-','Date':str(dt)
     }
 
-    return render(r,'index.html',context=data)
+    return render(r,'home.html',context=data)

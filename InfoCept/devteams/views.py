@@ -17,7 +17,7 @@ def indexPage(r):
     data = {
         'title': 'WelCome to InfoCept | Pune, 441014 |' ,'date':str(date)
     }
-    return render(r,'index.html',context=data)
+    return render(r,'home.html',context=data)
 
 
 def teamsForm(r):
