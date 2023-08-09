@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +15,10 @@
     </style>
 </head>
 <body>
-<div  class = "main"><center>{{title}}</div>
+<div  class = "main"><center>{{title}} {{date}}</div>
+<link rel="stylesheet" href="{%static 'css/teams.css' %}">
+<img src="{%static 'images/dev.jpg' %}">
+
+<h1>This website created by Roshan....</h1>
 </body>
 </html>
