@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Form</title>
+</head>
+<body>
+{%block baseblock%}
+<div class="container" align="center">
+    <form method="post">
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" value="submit">
+
+    </form>
+</div>
+{%endblock%}
+</body>
+</html>
