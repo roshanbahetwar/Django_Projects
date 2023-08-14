@@ -17,7 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from base import views
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", views.home),
+    path("home/", views.indexHome),
+    path("homepage/", views.homePage),
     path("epop/", include('epop.urls')),
+    path("accounts/", include('django.contrib.auth.urls')),
 ]

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+{%extends 'base.html'%}
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>population</title>
 </head>
 <body>
+{%block baseblock%}
 <link rel="stylesheet" href="{%static 'css/epop.css' %}">
 <h1><center>Welcome to GoiPop Plateform</center></h1>
 <<center><img src="{%static 'images/population.jpg' %}">
@@ -37,5 +39,6 @@
 <h1>No Data Found</h1>
 
 {%endif %}
+{%endblock%}
 </body>
 </html>

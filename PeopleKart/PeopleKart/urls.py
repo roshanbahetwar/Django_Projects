@@ -23,5 +23,5 @@ urlpatterns = [
     path("home/", views.peopleKart),
     path("homepage/", views.homePage),
     path("electronics/", include('electronics.urls')),
-    path("accounts/", include('django.contrib.auth.urls')),
+    path("registration/", include('django.contrib.auth.urls')),
 ]
