@@ -24,4 +24,6 @@ urlpatterns = [
     path("mobile/", views.mobile),
     path("tv/", views.tv),
     path("laptopdetails/", views.laptopDetails),
+    path("mobiledetails/", views.mobileDetails),
+    path("tvdetails/", views.tvDetails),
 ]
