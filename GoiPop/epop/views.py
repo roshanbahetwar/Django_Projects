@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import EpopDetailsForm
+from .form import EpopDetailsForm,SignUpForm
 from .models import EpopDetailsModels
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -19,3 +19,13 @@ def epopshow(r):
     md = {'erd_list':pop_list}
 
     return render(r,'epop/edetail.html',context=md)
+
+def signUp(r):
+    form = SignUpForm()
+    if r.method == 'POST':
+        form = SignUpForm(r.POST)
+        user = form.save()
+        user.set_password(user.password)
+        user.save()
+        return HttpResponseRedirect('/home/')
+    return render(r,'signup.html',{'form':form})

@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("registration/", views.epopform),
     path("show/", views.epopshow),
+    path("signup/", views.signUp),
 ]
