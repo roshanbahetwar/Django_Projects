@@ -1,5 +1,6 @@
 from .models import LaptopModel,MobileModel,TvModel
 from django import forms
+from django.contrib.auth.models import User
 
 
 class LaptopModelForm(forms.ModelForm):
@@ -37,3 +38,9 @@ class TvModelForm(forms.ModelForm):
             return price
         else:
             raise forms.ValidationError('Model price should not more than 30000')
+
+
+class SignUpForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','password','email','first_name','last_name']

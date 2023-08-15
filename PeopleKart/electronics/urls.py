@@ -26,4 +26,5 @@ urlpatterns = [
     path("laptopdetails/", views.laptopDetails),
     path("mobiledetails/", views.mobileDetails),
     path("tvdetails/", views.tvDetails),
+    path("signup/", views.signUp),
 ]

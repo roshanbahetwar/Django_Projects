@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%extends 'base.html'%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +9,8 @@
 <body>
 {%block baseblock%}
 <h1><center>Welcome to PeopleKart</center></h1>
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+<center><img src="{%static 'images/peoplekart.jpg'%}"></center>
 
 {%endblock%}
 </body>

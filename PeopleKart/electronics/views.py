@@ -4,6 +4,7 @@ from .form import LaptopModelForm,MobileModelForm,TvModelForm
 # Create your views here.
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from .form import SignUpForm
 
 def laptopNew(r):
     form = LaptopModelForm()
@@ -46,3 +47,13 @@ def mobileDetails(r):
 def tvDetails(r):
     tv_list = TvModel.objects.all()
     return render(r,'electronics/tvdetails.html',{'tv_list':tv_list})
+
+def signUp(r):
+    form = SignUpForm()
+    if r.method == 'POST':
+        form = SignUpForm(r.POST)
+        user = form.save()
+        user.set_password(user.password)
+        user.save()
+        return HttpResponseRedirect('/home/')
+    return render(r,'signup.html',{'form':form})
