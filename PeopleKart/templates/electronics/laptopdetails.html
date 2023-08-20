@@ -25,12 +25,19 @@
     <td style="text-align: center; vertical-align: middle;">{{lap.mname}}</td>
     <td style="text-align: center; vertical-align: middle;">{{lap.mprice}}</td>
     <td style="text-align: center; vertical-align: middle;">{{lap.mqty}}</td>
+    <td> <a href="/electronics/update/{{lap.id}}" class="btn btn-success">Update</a></td>
+    <td> <a href="/electronics/delete/{{lap.id}}" class="btn btn-danger">Delete</a></td>
   </tr>
   {%endfor%}
 </table>
 {%else%}
 <h1><center>No Data Found</center></h1>
 {%endif%}
+<div class="container" align="center">
+  <br>
+     <br>
+<a href="/electronics/laptop" class="btn btn-dark">Insert New Record</a>
+</div>
 {%endblock%}
 </body>
 </html>
