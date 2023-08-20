@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # "PeopleKart.middleware.Temp"           # This is added for middleware at prject level
 ]
 
 ROOT_URLCONF = "PeopleKart.urls"
