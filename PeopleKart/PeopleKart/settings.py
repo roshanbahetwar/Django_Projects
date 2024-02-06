@@ -15,8 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-TEMPLATE_DIR = Path.joinpath(BASE_DIR,'templates')
-STATIC_DIR =Path.joinpath(BASE_DIR,'static')
+TEMPLATE_DIR = Path.joinpath(BASE_DIR, "templates")
+STATIC_DIR = Path.joinpath(BASE_DIR, "static")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'electronics',
-    'clothes',
-    'base',
+    "electronics",
+    "clothes",
+    "base",
 ]
 
 MIDDLEWARE = [
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # "PeopleKart.middleware.Temp"           # This is added for middleware at prject level
+    # "PeopleKart.middleware.Temp"           # This is added for middleware at prject level,for activate middleware just remove "#".
 ]
 
 ROOT_URLCONF = "PeopleKart.urls"
@@ -114,8 +114,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = "/home/"
+LOGOUT_REDIRECT_URL = "/home/"
 
 
 # Static files (CSS, JavaScript, Images)

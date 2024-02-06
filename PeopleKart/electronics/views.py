@@ -1,44 +1,48 @@
 from django.shortcuts import render
-from .models import LaptopModel,MobileModel,TvModel
-from .form import LaptopModelForm,MobileModelForm,TvModelForm
+from .models import LaptopModel, MobileModel, TvModel
+from .form import LaptopModelForm, MobileModelForm, TvModelForm
+
 # Create your views here.
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .form import SignUpForm
 
-from django.db.models import Q,Max,Min,Count,Sum,Avg
+from django.db.models import Q, Max, Min, Count, Sum, Avg
 
 
 def laptopNew(r):
     form = LaptopModelForm()
-    if r.method == 'POST':
+    if r.method == "POST":
         form = LaptopModelForm(r.POST)
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect('/electronics/laptopdetails/')
-    return render(r,'electronics/laptopNew.html',{'form':form})
+        return HttpResponseRedirect("/electronics/laptopdetails/")
+    return render(r, "electronics/laptopNew.html", {"form": form})
+
 
 def mobile(r):
     form = MobileModelForm()
-    if r.method == 'POST':
+    if r.method == "POST":
         form = MobileModelForm(r.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/electronics/mobiledetails/')
-    return render(r,'electronics/mobile.html',{'form':form})
+            return HttpResponseRedirect("/electronics/mobiledetails/")
+    return render(r, "electronics/mobile.html", {"form": form})
+
 
 def tv(r):
     form = TvModelForm()
-    if r.method == 'POST':
+    if r.method == "POST":
         form = TvModelForm(r.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/electronics/tvdetails')
-    return render(r,'electronics/tv.html',{'form':form})
+            return HttpResponseRedirect("/electronics/tvdetails")
+    return render(r, "electronics/tv.html", {"form": form})
+
 
 @login_required()
 def laptopDetails(r):
-    '''ORM Queries'''
+    """ORM Queries"""
 
     lap_list = LaptopModel.objects.all()
     # lap_list = LaptopModel.objects.filter(mqty__gt = 5)  # ORM query model qty greater than 5
@@ -76,38 +80,43 @@ def laptopDetails(r):
     # print(count)
     # print(sum)
 
-    return render(r,'electronics/laptopdetails.html',{'laptop_list':lap_list})
+    return render(r, "electronics/laptopdetails.html", {"laptop_list": lap_list})
+
 
 @login_required()
 def mobileDetails(r):
     mob_list = MobileModel.objects.all()
-    return render(r,'electronics/mobiledetails.html',{'mobile_list':mob_list})
+    return render(r, "electronics/mobiledetails.html", {"mobile_list": mob_list})
+
 
 @login_required()
 def tvDetails(r):
     tv_list = TvModel.objects.all()
-    return render(r,'electronics/tvdetails.html',{'tv_list':tv_list})
+    return render(r, "electronics/tvdetails.html", {"tv_list": tv_list})
+
 
 def signUp(r):
     form = SignUpForm()
-    if r.method == 'POST':
+    if r.method == "POST":
         form = SignUpForm(r.POST)
         user = form.save()
         user.set_password(user.password)
         user.save()
-        return HttpResponseRedirect('/home/')
-    return render(r,'signup.html',{'form':form})
+        return HttpResponseRedirect("/home/")
+    return render(r, "signup.html", {"form": form})
 
-def update(r,id):
+
+def update(r, id):
     form = LaptopModel.objects.get(id=id)
-    if r.method == 'POST':
-        form = LaptopModelForm(r.POST,instance=form)
+    if r.method == "POST":
+        form = LaptopModelForm(r.POST, instance=form)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/electronics/laptopdetails/')
-    return render(r,'electronics/update.html',{'form':form})
+            return HttpResponseRedirect("/electronics/laptopdetails/")
+    return render(r, "electronics/update.html", {"form": form})
 
-def delete(r,id):
+
+def delete(r, id):
     obj = LaptopModel.objects.get(id=id)
     obj.delete()
-    return HttpResponseRedirect('/electronics/laptopdetails/')
+    return HttpResponseRedirect("/electronics/laptopdetails/")

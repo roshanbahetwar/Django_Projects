@@ -12,6 +12,7 @@ class MobileModel(models.Model):
     mprice = models.IntegerField()
     mqty = models.IntegerField()
 
+
 class TvModel(models.Model):
     mname = models.CharField(max_length=25)
     mprice = models.IntegerField()

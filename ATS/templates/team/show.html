@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>team details</title>
+</head>
+<body>
+<h1><center>Welcome to Teams</h1>
+<table style="width:60%" border="1" margin="auto" align="center">
+    {% if teams_lst %}
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    {% for team in teams_lst %}
+    <tr>
+        <td style="text-align: center; vertical-align: middle;">{{team.id}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{team.name}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{team.age}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{team.email}}</td>
+   </tr>
+{%endfor%}
+</table>
+{%else%}
+<h1>No Data Found</h1>
+{%endif%}
+</body>
+</html>

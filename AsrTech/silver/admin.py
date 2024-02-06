@@ -3,7 +3,7 @@ from .models import SilverDetailsModels
 
 # Register your models here.
 class SilverDetailsAdmin(admin.ModelAdmin):
-    list_display = ['product','price','qty','date']
+    list_display = ["product", "price", "qty", "date"]
 
 
-admin.site.register(SilverDetailsModels,SilverDetailsAdmin)
+admin.site.register(SilverDetailsModels, SilverDetailsAdmin)

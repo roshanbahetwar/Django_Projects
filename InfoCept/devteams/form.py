@@ -1,30 +1,30 @@
 from .models import TeamsModelDetails
 from django import forms
 
+
 class TeamsDetailsForm(forms.ModelForm):
     class Meta:
         model = TeamsModelDetails
-        fields = '__all__'
-
+        fields = "__all__"
 
     # validation for age
     def clean_name(self):
-        name = self.cleaned_data['name']
+        name = self.cleaned_data["name"]
         if name == name.capitalize():
             return name
         else:
-            raise forms.ValidationError('first character of name should be Capital.')
+            raise forms.ValidationError("first character of name should be Capital.")
 
     def clean_age(self):
-        age = self.cleaned_data['age']
+        age = self.cleaned_data["age"]
         if age <= 30:
             return age
         else:
-            raise forms.ValidationError('age should be less than or equal to 30 years.')
+            raise forms.ValidationError("age should be less than or equal to 30 years.")
 
     def clean_salary(self):
-        salary = self.cleaned_data['salary']
+        salary = self.cleaned_data["salary"]
         if salary < 50000:
-            raise forms.ValidationError('Salary Should not be less than 50000.')
+            raise forms.ValidationError("Salary Should not be less than 50000.")
         else:
             return salary

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>medInfo</title>
+</head>
+<body>
+<table style="width:65%" border="1" align="center" margin = 'auto'>
+    <h1><center>Medical Details of Employee</center></h1>
+    {% if med_lst %}
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Height</th>
+        <th>Weight</th>
+    </tr>
+    {%for med in med_lst%}
+    <tr>
+        <td style="text-align: center; vertical-align: middle;">{{med.id}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{med.name}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{med.age}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{med.height}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{med.weight}}</td>
+    </tr>
+    {%endfor%}
+
+</table>
+{%else%}
+<h1>No Data found</h1>
+{%endif%}
+</body>
+<h3><center>Note:- CheckUp only those whose age is below 40 Years</center></h3>
+</html>

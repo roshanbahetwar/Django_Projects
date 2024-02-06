@@ -14,8 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR = Path.joinpath(BASE_DIR,'templates')
-STATIC_DIR = Path.joinpath(BASE_DIR,'static')
+
+TEMPLATE_DIR = Path.joinpath(BASE_DIR, "templates")
+STATIC_DIR = Path.joinpath(BASE_DIR, "static")
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,8 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'epop',
-    'vpop',
+    "epop",
+    "vpop",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "GoiPop.middleware.GTemp"
 ]
 
 ROOT_URLCONF = "GoiPop.urls"
@@ -112,8 +114,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = "/home/"
+LOGOUT_REDIRECT_URL = "/home/"
 
 
 # Static files (CSS, JavaScript, Images)

@@ -3,6 +3,7 @@ from .models import TeamsModelDetails
 
 # Register your models here.
 class TeamsDetailsAdmin(admin.ModelAdmin):
-    list_display = ['name','age','salary','city']
+    list_display = ["name", "age", "salary", "city"]
 
-admin.site.register(TeamsModelDetails,TeamsDetailsAdmin)
+
+admin.site.register(TeamsModelDetails, TeamsDetailsAdmin)

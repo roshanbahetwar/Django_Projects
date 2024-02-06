@@ -1,5 +1,6 @@
 from django import forms
 
+
 class FeedbackForm(forms.Form):
     name = forms.CharField(max_length=25)
     age = forms.IntegerField()

@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from actress import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("actress_details/", views.actress_form),
