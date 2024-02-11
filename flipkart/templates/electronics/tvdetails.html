@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{%block baseblock%}
+<body>
+<h1>Tvs Details</h1>
+{% if tv_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Product Name</th>
+    <th>Prd Price</th>
+    <th>Prd Qty</th>
+  </tr>
+     {% for prd in tv_list %}
+     <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.model_name}}</td>
+    <td>{{prd.model_price}}</td>
+    <td>{{prd.model_qty}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+</body>
+{%endblock%}
+</html>

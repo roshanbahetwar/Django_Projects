@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{%block baseblock%}
+<body>
+<h1>Kids Details</h1>
+{% if kids_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Clothes category</th>
+    <th>Clothes price</th>
+    <th>Clothes Qty</th>
+  </tr>
+     {% for prd in kids_list %}
+     <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.cloth_category}}</td>
+    <td>{{prd.cloth_price}}</td>
+    <td>{{prd.cloth_qty}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+</body>
+{%endblock%}
+</html>

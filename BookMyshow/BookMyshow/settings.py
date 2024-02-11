@@ -79,11 +79,11 @@ WSGI_APPLICATION = "BookMyshow.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "mssql",
-        "NAME": "BookMyshow",
+        "ENGINE": "mssql",      # database mssql
+        "NAME": "BookMyshow",   # database name
         "USERNAME": "",
         "PASSWORD": "",
-        "HOST": "LAPTOP-AT3H5HSA\SQLEXPRESS",
+        "HOST": "LAPTOP-AT3H5HSA\SQLEXPRESS",   # server name from mssql
     }
 }
 

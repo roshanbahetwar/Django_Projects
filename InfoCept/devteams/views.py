@@ -17,8 +17,8 @@ def indexPage(r):
 
     date = datetime.datetime.now()
 
-    data = {"title": "WelCome to InfoCept | Pune, 441014 |", "date": str(date)}
-    return render(r, "home.html", context=data)
+    data = {"title": "WelCome Roshan, InfoCept World | Pune, 441014 |", "date": str(date)}
+    return render(r, "index.html", context=data)
 
 
 def teamsForm(r):

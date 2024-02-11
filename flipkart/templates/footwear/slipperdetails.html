@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{%block baseblock%}
+<body>
+<body>
+<div align="center" class="container">
+<h1>Slipper Details</h1>
+{% if slipper_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Slipper Type</th>
+    <th>Slipper Price</th>
+    <th>Slipper Qty</th>
+  </tr>
+     {% for prd in slipper_list %}
+     <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.slipper_type}}</td>
+    <td>{{prd.slipper_price}}</td>
+    <td>{{prd.slipper_qty}}</td>
+  </tr>
+{%endfor %}
+
+</table>
+{%else%}
+<h1>No Data Found</h1>
+
+{%endif %}
+
+</div>
+</body>
+{%endblock%}
+</html>

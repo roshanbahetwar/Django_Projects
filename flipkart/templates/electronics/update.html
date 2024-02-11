@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<form method = "post">
+    {{form.as_p}}
+    {%csrf_token%}
+    Model Name: <input type = "text"  name = "model_name" value = "{{form.model_name}}">
+    <br>
+    Model Price: <input type = "text"  name = "model_price" value = "{{form.model_price}}">
+    <br>
+    Model Qty:  <input type = "text"  name = "model_qty" value = "{{form.model_qty}}">
+    <br>
+         <input type="submit" class="btn btn-dark" value="Update Record">
+    </form>
+  {%endblock%}
+</body>
+</html>
